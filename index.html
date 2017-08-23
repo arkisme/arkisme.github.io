@@ -197,7 +197,6 @@
 				function biliFormSubmit()
 				{
 					var form = document.createElement("form");
-					var tn =document.createElement("input");
 					var text = document.getElementById("searchInput").cloneNode();
 					if(text.value == "")
 					{
@@ -228,7 +227,6 @@
 				function tbFormSubmit()
 				{
 					var form = document.createElement("form");
-					var tn =document.createElement("input");
 					var text = document.getElementById("searchInput").cloneNode();
 					if(text.value == "")
 					{
@@ -259,8 +257,8 @@
 				function jdFormSubmit()
 				{
 					var form = document.createElement("form");
-					var tn =document.createElement("input");
 					var text = document.getElementById("searchInput").cloneNode();
+					var enc =document.createElement("input");
 					if(text.value == "")
 					{
 						form.action = "https://jd.com";
@@ -270,7 +268,10 @@
 						form.action = "https://search.jd.com/Search";
 						form.target = "_blank";
 						text.name="keyword";
+						enc.name="enc";
+						enc.value="utf-8";
 						form.appendChild(text.cloneNode());
+						form.appendChild(enc.cloneNode());
 					}
 					
 					form.style.display = "none";
