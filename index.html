@@ -287,16 +287,43 @@
 					京东商城
 				</div>
 			</a>
+			<script>
+				function zhihuFormSubmit()
+				{
+					var form = document.createElement("form");
+					var text = document.getElementById("searchInput").cloneNode();
+					var enc =document.createElement("input");
+					if(text.value == "")
+					{
+						form.action = "https://zhihu.sogou.com";
+					}
+					else
+					{
+						form.action = "https://zhihu.sogou.com/zhihu";
+						form.target = "_blank";
+						text.name="query";
+						enc.name="ie";
+						enc.value="utf-8";
+						form.appendChild(text.cloneNode());
+						form.appendChild(enc.cloneNode());
+					}
+					
+					form.style.display = "none";
+					document.body.appendChild(form);
+					form.submit();
+					document.body.removeChild(form);
+				}
+			</script>
+			<a class="nav_box" href="javascript:zhihuFormSubmit();">
+				<img class="nav_icon" src="https://ss3.bdstatic.com/iPoZeXSm1A5BphGlnYG/icon/95599.png"  alt="谷歌学术" width="16" height="16"/>
+				<div class="nav_text">
+					知乎搜索
+				</div>
+			</a>
 			<a class="nav_box" href="http://srv.arkis.me:10500">
 				<img class="nav_icon" src="https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/icon/6000.png"  alt="远程下载" width="16" height="16"/>
 				<div class="nav_text">
 					远程下载
-				</div>
-			</a>
-			<a class="nav_box" href="https://s.netstat.club">
-				<img class="nav_icon" src="https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/icon/6000.png"  alt="谷歌学术" width="16" height="16"/>
-				<div class="nav_text">
-					谷歌学术
 				</div>
 			</a>
 			<a class="nav_box" href="https://translate.google.cn/">
