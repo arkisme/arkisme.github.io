@@ -86,7 +86,7 @@
 	}
 	.input2
 	{
-		width:40%;
+		width:30%;
 		min-width:280px;
 		height:19px;
 		color: #AAAAAA;
@@ -112,6 +112,7 @@
 	.table1{
 		width:100%;
 		text-align:center;
+		margin: auto;
 	}
 	.nav_container{
 		height:auto;
@@ -393,13 +394,14 @@
 					document.body.removeChild(form);
 				}
 		</script>
-
+		<div>
 		<table class="table1">
 			<tbody>
 				<tr>
 					<td>
-					<label><input type="radio" name="engineSelect" id="baidu" onclick="setCookie('engine','baidu',365)"><i>✓</i>百度</label>
-					<label><input type="radio" name="engineSelect" id="google"onclick="setCookie('engine','google',365)"><i>✓</i>谷歌</label>
+						<label><input name="engineSelect" id="baidu" onclick="setCookie('engine','baidu',365)" checked="checked" type="radio"><i>✓</i>百度</label>
+						<label><input name="engineSelect" id="google" onclick="setCookie('engine','google',365)" type="radio"><i>✓</i>谷歌</label>
+					</td>
 
 					<script>
 							function setCookie(c_name,value,expiredays)
@@ -450,13 +452,19 @@
 							}
 					</script>
 
-					<input name="hl" value="zh-CN" type="hidden">
-					<form action="javascript:searchFormSubmit();"><input class="input2" name="q" baidusug="1" id="searchInput" autocomplete="off" type="text" onsubmit="javascript:searchFormSubmit();"></form>
-					<input class="input1" value=" 搜索 " type="submit" onclick="javascript:searchFormSubmit();">
+					<td>
+						<input name="hl" value="zh-CN" type="hidden">
+						<form action="javascript::" onsubmit="javascript:searchFormSubmit();"><input class="input2" name="q" baidusug="1" id="searchInput" autocomplete="off" onsubmit="javascript:searchFormSubmit();" type="text"></form>
 					</td>
+
+					<td>
+						<input class="input1" value=" 搜索 " onclick="javascript:searchFormSubmit();" type="submit">
+					</td>
+					
 				</tr>
 			</tbody>
 		</table>
+		</div>
 		<br/>
 		<div class="pt">
 		<script>
