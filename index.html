@@ -355,7 +355,16 @@
 		</form>
 		<br/>
 		<div class="pt">
-			Tips: 搜索框输入内容后，点击百度、淘宝、哔哩、京东 可直接搜索。
+		<script>
+			tips = new Array(5);
+			tips[0] = '搜索框输入内容后,点击百度、淘宝、哔哩、京东、知乎搜索 都可直接搜索了';
+			tips[1] = '本页文献搜索是免费的,注册一个登陆后就可以免费下载文献';
+			tips[2] = 'WIKI是用来梳理记录自己的知识的最好的工具';
+			tips[3] = '做好备份,有备无患'; 
+			tips[4] = '离线下载:上班时候下载，下班回家看'; 
+			index = Math.floor(Math.random() * tips.length);
+			document.write(tips[index]);
+		</script>
 		</div>
 	</body>
 	<script charset="gbk" src="http://home.arkis.me/bds.js"></script>
