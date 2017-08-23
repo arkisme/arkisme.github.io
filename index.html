@@ -38,6 +38,7 @@
 		border: 1px solid #ccc;
 		-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 	}
+
 	a {
 	color: #2c3e50;
 	text-decoration: none;
@@ -86,8 +87,7 @@
 	}
 	.input2
 	{
-		width:30%;
-		min-width:280px;
+		min-width:650px;
 		height:19px;
 		color: #AAAAAA;
 		text-decoration: none;
@@ -110,9 +110,9 @@
 		text-align:center;
 	}
 	.table1{
-		width:100%;
+		width:850px;
 		text-align:center;
-		margin: auto;
+		margin:auto;
 	}
 	.nav_container{
 		height:auto;
@@ -351,58 +351,56 @@
 		<br/>
 		
 		<script>
-				function searchFormSubmit()
+			function searchFormSubmit()
+			{
+				var baidu = document.getElementById("baidu");
+				var google = document.getElementById("google");
+				var form = document.createElement("form");
+				var text = document.getElementById("searchInput").cloneNode();
+
+				if(baidu.checked)
 				{
-					var baidu = document.getElementById("baidu");
-					var google = document.getElementById("google");
-					var form = document.createElement("form");
-					var text = document.getElementById("searchInput").cloneNode();
-
-					if(baidu.checked)
-					{
-						var tn =document.createElement("input");
-						form.action = "https://baidu.com/baidu";
-						form.target = "_blank";
-						tn.name="tn";
-						tn.type="hidden";
-						tn.value="baidu";
-						text.name = "word";
-						form.appendChild(tn.cloneNode());
-						form.appendChild(text.cloneNode());
-					}
-					else if(google.checked)
-					{
-						var hl = document.createElement("input");
-						form.action = "https://g.netstat.club/search";
-						form.target = "_blank";
-						text.name="q";
-						
-						hl.name="hl";
-						hl.value = "zh-CN";
-						hl.type = "hidden";
-
-						form.appendChild(hl.cloneNode());
-						form.appendChild(text.cloneNode());
-					}
-					else
-					{
-						alert("没选择搜索引擎!");
-					}
-					form.style.display = "none";
-					document.body.appendChild(form);
-					form.submit();
-					document.body.removeChild(form);
+					var tn =document.createElement("input");
+					form.action = "https://baidu.com/baidu";
+					form.target = "_blank";
+					tn.name="tn";
+					tn.type="hidden";
+					tn.value="baidu";
+					text.name = "word";
+					form.appendChild(tn.cloneNode());
+					form.appendChild(text.cloneNode());
 				}
+				else if(google.checked)
+				{
+					var hl = document.createElement("input");
+					form.action = "https://g.netstat.club/search";
+					form.target = "_blank";
+					text.name="q";
+
+					hl.name="hl";
+					hl.value = "zh-CN";
+					hl.type = "hidden";
+
+					form.appendChild(hl.cloneNode());
+					form.appendChild(text.cloneNode());
+				}
+				else
+				{
+					alert("没选择搜索引擎!");
+				}
+				form.style.display = "none";
+				document.body.appendChild(form);
+				form.submit();
+				document.body.removeChild(form);
+			}
 		</script>
 		<div>
-		<table class="table1">
-			<tbody>
+			<table class="table1">
 				<tr>
 					<td>
-						<label><input name="engineSelect" id="baidu" onclick="setCookie('engine','baidu',365)" checked="checked" type="radio"><i>✓</i>百度</label>
-						<label><input name="engineSelect" id="google" onclick="setCookie('engine','google',365)" type="radio"><i>✓</i>谷歌</label>
+						<label><input type="radio" name="engineSelect" id="baidu" onclick="setCookie('engine','baidu',365)"><i>✓</i>百度</label>
+						<label><input type="radio" name="engineSelect" id="google"onclick="setCookie('engine','google',365)"><i>✓</i>谷歌</label>
 					</td>
-
 					<script>
 							function setCookie(c_name,value,expiredays)
 							{
@@ -452,18 +450,11 @@
 							}
 					</script>
 
-					<td>
-						<input name="hl" value="zh-CN" type="hidden">
-						<form action="javascript::" onsubmit="javascript:searchFormSubmit();"><input class="input2" name="q" baidusug="1" id="searchInput" autocomplete="off" onsubmit="javascript:searchFormSubmit();" type="text"></form>
-					</td>
-
-					<td>
-						<input class="input1" value=" 搜索 " onclick="javascript:searchFormSubmit();" type="submit">
-					</td>
-					
+					<input name="hl" value="zh-CN" type="hidden">
+					<td><form action="javascript:searchFormSubmit();"><input class="input2" name="q" baidusug="1" id="searchInput" autocomplete="off" type="text" onclick="javascript:enterSubmit();"></form></td>
+					<td><input class="input1" value=" 搜索 " type="submit" onclick="javascript:searchFormSubmit();"></td>
 				</tr>
-			</tbody>
-		</table>
+			</table>
 		</div>
 		<br/>
 		<div class="pt">
