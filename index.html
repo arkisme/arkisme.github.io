@@ -395,7 +395,6 @@
 		</script>
 
 		<table class="table1">
-			<form>
 			<tbody>
 				<tr>
 					<td>
@@ -452,12 +451,11 @@
 					</script>
 
 					<input name="hl" value="zh-CN" type="hidden">
-					<input class="input2" name="q" baidusug="1" id="searchInput" autocomplete="off" type="text" onsubmit="javascript:searchFormSubmit();">
+					<form action="javascript:searchFormSubmit();"><input class="input2" name="q" baidusug="1" id="searchInput" autocomplete="off" type="text" onsubmit="javascript:searchFormSubmit();"></form>
 					<input class="input1" value=" 搜索 " type="submit" onclick="javascript:searchFormSubmit();">
 					</td>
 				</tr>
 			</tbody>
-			</form>
 		</table>
 		<br/>
 		<div class="pt">
