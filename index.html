@@ -158,25 +158,129 @@
 		<br/>
 		
 		<div class="nav_container">
-			<a class="nav_box" href="https://www.baidu.com">
+			<script>
+				function bdFormSubmit()
+				{
+					var form = document.createElement("form");
+					var tn =document.createElement("input");
+					var text = document.getElementById("searchInput").cloneNode();
+
+					if(text.value == "")
+					{
+						form.action = "https://www.baidu.com";
+					}
+					else
+					{
+						form.action = "https://www.baidu.com/baidu";
+						form.target = "_blank";
+						tn.name="tn";
+						tn.type="hidden";
+						tn.value="baidu";
+						text.name="word";
+						form.appendChild(tn.cloneNode());
+						form.appendChild(text.cloneNode());
+					}
+					form.style.display = "none";
+					document.body.appendChild(form);
+					form.submit();
+					document.body.removeChild(form);
+				}
+			</script>
+			<a class="nav_box" href="javascript:bdFormSubmit();">
 				<img class="nav_icon" src="https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/95585.png"  alt="百度搜索" width="16" height="16"/>
 				<div class="nav_text">
 					百度搜索
 				</div>
 			</a>
-			<a class="nav_box" href="https://www.bilibili.com/">
+			
+			<script>
+				function biliFormSubmit()
+				{
+					var form = document.createElement("form");
+					var tn =document.createElement("input");
+					var text = document.getElementById("searchInput").cloneNode();
+					if(text.value == "")
+					{
+						form.action = "https://www.bilibili.com";
+					}
+					else
+					{
+						form.action = "https://search.bilibili.com/all";
+						form.target = "_blank";
+						text.name="keyword";
+						form.appendChild(text.cloneNode());
+					}
+					form.style.display = "none";
+					document.body.appendChild(form);
+					form.submit();
+					document.body.removeChild(form);
+					
+				}
+			</script>
+			<a class="nav_box" href="javascript:biliFormSubmit();">
 				<img class="nav_icon" src="https://ss2.bdstatic.com/lfoZeXSm1A5BphGlnYG/icon/7718.png"  alt="哔哩哔哩动画" width="16" height="16"/>
 				<div class="nav_text">
 					哔哩哔哩
 				</div>
 			</a>
-			<a class="nav_box" href="https://www.taobao.com">
+			
+			<script>
+				function tbFormSubmit()
+				{
+					var form = document.createElement("form");
+					var tn =document.createElement("input");
+					var text = document.getElementById("searchInput").cloneNode();
+					if(text.value == "")
+					{
+						form.action = "https://www.taobao.com";
+					}
+					else
+					{
+						form.action = "https://s.taobao.com/search";
+						form.target = "_blank";
+						text.name="q";
+						form.appendChild(text.cloneNode());
+					}
+					form.style.display = "none";
+					document.body.appendChild(form);
+					form.submit();
+					document.body.removeChild(form);
+					
+				}
+			</script>
+			<a class="nav_box" href="javascript:tbFormSubmit();">
 				<img class="nav_icon" src="https://ss3.bdstatic.com/iPoZeXSm1A5BphGlnYG/icon/95487.png"  alt="淘宝网" width="16" height="16"/>
 				<div class="nav_text">
 					淘宝网
 				</div>
 			</a>
-			<a class="nav_box" href="https://www.jd.com/">
+			
+			<script>
+				function jdFormSubmit()
+				{
+					var form = document.createElement("form");
+					var tn =document.createElement("input");
+					var text = document.getElementById("searchInput").cloneNode();
+					if(text.value == "")
+					{
+						form.action = "https://jd.com";
+					}
+					else
+					{
+						form.action = "https://search.jd.com/Search";
+						form.target = "_blank";
+						text.name="keyword";
+						form.appendChild(text.cloneNode());
+					}
+					
+					form.style.display = "none";
+					document.body.appendChild(form);
+					form.submit();
+					document.body.removeChild(form);
+				}
+			</script>
+
+			<a class="nav_box" href="javascript:jdFormSubmit();">
 				<img class="nav_icon" src="https://ss1.bdstatic.com/lvoZeXSm1A5BphGlnYG/icon/95541.png"  alt="京东商城" width="16" height="16"/>
 				<div class="nav_text">
 					京东商城
